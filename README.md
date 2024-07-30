@@ -1,11 +1,7 @@
 # ML-projects
-This dataset contains data of Quikr Cars about second hand cars . This data was web scrapped from their website and have data of about 1000 cars and have features like
--Name
--Company
--Quikr Label (Platinum / Gold)
--Location
--Price
--Kms driven
--Fuel type
-
-The file train.csv contains metrics and other details of about 15000 youtube videos. The metrics include number of views, likes, dislikes, comments and apart from that published date, duration and category are also included. The train.csv file also contains the metric number of adviews which is our target variable for prediction.
+This repository contains mini projects in machine learning with Jupyter Notebook files.
+machine-learning-project-walkthrough:
+This project demonstrates how all the steps of a machine learning pipeline come together to solve a problem.
+The README provides a walkthrough of the entire process.
+Remember, a well-crafted README can significantly enhance the visibility and impact of your machine learning project. Whether you’re a content creator, educator, or practitioner, sharing your insights and making your work accessible benefits the broader community. Happy coding! 🚀📚
+Feel free to explore these repositories and dive into the fascinating world of machine learning! 😊🌟
