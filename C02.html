@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carbon Footprint Calculator</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #c6efce; /* Light green background */
+    background-image: linear-gradient(to bottom, #c6efce, #f7f7f7); /* Add gradient background */
+    transition: background-color 0.3s; /* Add transition effect */
+    animation: fade-in 1s; /* Add animation effect */
+}
+
+h1 {
+    color: #333;
+    font-size: 48px; /* Increase font size */
+    margin: 40px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    text-align: center;
+    animation: slide-in 1s; /* Add animation effect */
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    transition: box-shadow 0.3s; /* Add transition effect */
+    animation: zoom-in 1s; /* Add animation effect */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+    width: 100%;
+    color: #555; /* Slightly darker label color */
+    transition: color 0.3s; /* Add transition effect */
+}
+
+input, select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s; /* Add transition effect */
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add focus shadow */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 350px;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add button shadow */
+    animation: pulse 2s infinite; /* Add animation effect */
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Increase button shadow on hover */
+}
+
+#result {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+    animation: fade-in 1s; /* Add animation effect */
+}
+
+.icon {
+    margin-right: 15px;
+    color: #4CAF50;
+    transition: color 0.3s; /* Add transition effect */
+}
+
+h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s; /* Add transition effect */
+}
+
+/* Add animation for form submission */
+#carbonFootprintForm {
+    animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+    </style>
+   
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <h1>Calculate Your Carbon Footprint</h1>
+    
+
+    <form id="carbonFootprintForm">
+       <h3><i class="fas fa-user"></i> Body Type</h3>
+<select id="bodyType" name="bodyType">
+    <option value="slim">Slim</option>
+    <option value="average">Average</option>
+    <option value="obese">Obese</option>
+</select>
+
+<h3><i class="fas fa-transgender"></i> Sex</h3>
+<select id="sex" name="sex">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+</select>
+
+<h3><i class="fas fa-leaf"></i> Diet</h3>
+<select id="diet" name="diet">
+    <option value="vegan">Vegan</option>
+    <option value="vegetarian">Vegetarian</option>
+    <option value="meat">Meat</option>
+</select>
+
+<h3><i class="fas fa-shower"></i> How Often Shower</h3>
+<select id="showerFrequency" name="showerFrequency">
+    <option value="daily">Daily</option>
+    <option value="everyOtherDay">Every Other Day</option>
+    <option value="weekly">Weekly</option>
+</select>
+
+<h3><i class="fas fa-plug"></i> Heating Energy Source</h3>
+<select id="heatingEnergySource" name="heatingEnergySource">
+    <option value="gas">Gas</option>
+    <option value="electricity">Electricity</option>
+</select>
+
+<h3><i class="fas fa-car"></i> Transport</h3>
+<select id="transport" name="transport">
+    <option value="driving">Driving</option>
+    <option value="publicTransport">Public Transport</option>
+    <option value="cycling">Cycling</option>
+</select>
+
+<h3><i class="fas fa-car-side"></i> Vehicle Type</h3>
+<select id="vehicleType" name="vehicleType">
+    <option value="gasoline">Gasoline</option>
+    <option value="electric">Electric</option>
+</select>
+
+<h3><i class="fas fa-users"></i> Social Activity</h3>
+<select id="socialActivity" name="socialActivity">
+    <option value="active">Active</option>
+    <option value="moderate">Moderate</option>
+    <option value="sedentary">Sedentary</option>
+</select>
+
+<h3><i class="fas fa-shopping-cart"></i> Monthly Grocery Bill</h3>
+<input type="number" id="monthlyGroceryBill" name="monthlyGroceryBill" placeholder="Enter amount">
+
+<h3><i class="fas fa-plane-departure"></i> Frequency of Traveling by Air</h3>
+<select id="frequencyOfTravelingByAir" name="frequencyOfTravelingByAir">
+    <option value="frequent">Frequent</option>
+    <option value="occasional">Occasional</option>
+    <option value="rarely">Rarely</option>
+</select>
+
+<h3><i class="fas fa-road"></i> Vehicle Monthly Distance (km)</h3>
+<input type="number" id="vehicleMonthlyDistanceKm" name="vehicleMonthlyDistanceKm" placeholder="Enter distance">
+
+<h3><i class="fas fa-trash"></i> Waste Bag Size</h3>
+<select id="wasteBagSize" name="wasteBagSize">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+</select>
+
+<h3><i class="fas fa-trash"></i> Waste Bag Weekly Count</h3>
+<input type="number" id="wasteBagWeeklyCount" name="wasteBagWeeklyCount" placeholder="Enter count">
+
+<h3><i class="fas fa-tv"></i> How Long TV/PC Daily (hours)</h3>
+<input type="number" id="tvPcHour" name="tvPcHour" placeholder="Enter hours">
+
+<h3><i class="fas fa-tshirt"></i> How Many New Clothes Monthly</h3>
+<input type="number" id="newClothesMonthly" name="newClothesMonthly" placeholder="Enter count">
+
+<h3><i class="fas fa-laptop"></i> How Long Internet Daily (hours)</h3>
+<input type="number" id="internetDailyHour" name="internetDailyHour" placeholder="Enter hours">
+
+<h3><i class="fas fa-bolt"></i> Energy Efficiency</h3>
+<select id="energyEfficiency" name="energyEfficiency">
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+</select>
+
+<h3><i class="fas fa-recycle"></i> Recycling</h3>
+<select id="recycling" name="recycling">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+</select>
+
+<h3><i class="fas fa-fire"></i> Cooking With</h3>
+<select id="cookingWith" name="cookingWith">
+    <option value="electric">Electric</option>
+    <option value="gas">Gas</option>
+</select>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
